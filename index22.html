@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sachin Kolhe</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-all duration-300">
+
+    <!-- 🌗 Dark Mode Toggle -->
+    <div class="p-4 text-right">
+      <button onclick="toggleDarkMode()" class="bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded">
+        Toggle Theme
+      </button>
+    </div>
+
+    <!-- 🌐 Header -->
+    <header class="bg-gray-800 text-white py-4 sticky top-0 z-50">
+      <nav class="container mx-auto flex justify-between items-center px-4">
+        <h1 class="text-xl font-bold">Sachin Kolhe</h1>
+        <ul class="flex space-x-4">
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#skills" class="hover:underline">Skills</a></li>
+          <li><a href="#projects" class="hover:underline">Projects</a></li>
+          <li><a href="#contacts" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 👤 About Section -->
+    <section id="about" class="p-8" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-2">About Me</h2>
+      <p class="text-xl font-medium">
+        I'm a <span id="typing-text" class="text-blue-600"></span>
+      </p>
+      <a href="resume.pdf" download class="inline-block mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition duration-300">
+        Download Resume
+      </a>
+    </section>
+
+    <!-- 🛠️ Skills Section -->
+    <section id="skills" class="p-8 bg-gray-100 dark:bg-gray-800" data-aos="fade-right">
+      <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+      <ul class="list-disc ml-6">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React JS</li>
+        <li>Node JS</li>
+      </ul>
+    </section>
+
+    <!-- 💼 Projects Section -->
+    <section id="projects" class="p-8" data-aos="fade-left">
+      <h2 class="text-2xl font-semibold mb-4">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-gray-700 shadow-lg p-4 rounded-md hover:scale-105 transition duration-300">
+          <h3 class="text-xl font-bold">Portfolio Website</h3>
+          <p>A responsive personal portfolio using HTML, CSS, JS</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 shadow-lg p-4 rounded-md hover:scale-105 transition duration-300">
+          <h3 class="text-xl font-bold">Expense Tracker</h3>
+          <p>Track income and expenses using local storage (React)</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 shadow-lg p-4 rounded-md hover:scale-105 transition duration-300">
+          <h3 class="text-xl font-bold">Weather App</h3>
+          <p>Displays real-time weather data using Weather API</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 shadow-lg p-4 rounded-md hover:scale-105 transition duration-300">
+          <h3 class="text-xl font-bold">PG Management</h3>
+          <p>Web app to manage tenants and rent (Firebase + React)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📞 Contact Section -->
+    <section id="contacts" class="p-8 bg-gray-100 dark:bg-gray-800" data-aos="zoom-in">
+      <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
+      <form id="contact-form" action="https://formsubmit.co/sachin" method="POST" class="space-y-4">
+        <input type="text" name="name" placeholder="Your name" class="w-full p-2 rounded border" required />
+        <input type="email" name="email" placeholder="Your email" class="w-full p-2 rounded border" required />
+        <textarea name="message" placeholder="Your message" class="w-full p-2 rounded border" required></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+      </form>
+      <p id="form-message" class="mt-2 text-green-500"></p>
+    </section>
+
+    <!-- 🔗 Social Icons -->
+    <section class="p-4 text-center space-x-4">
+      <a href="https://github.com/sachin" target="_blank" class="text-xl hover:text-blue-500">GitHub</a>
+      <a href="https://linkedin.com/in/sachin" target="_blank" class="text-xl hover:text-blue-500">LinkedIn</a>
+      <a href="mailto:sachin@email.com" class="text-xl hover:text-blue-500">Email</a>
+    </section>
+
+    <!-- 📄 Footer -->
+    <footer class="text-center p-4 bg-gray-800 text-white">
+      © 2025 Sachin Kolhe
+    </footer>
+
+    <!-- 🔝 Back to Top -->
+    <button onclick="scrollToTop()" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+      ↑
+    </button>
+
+    <!-- ✨ Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      function toggleDarkMode() {
+        document.body.classList.toggle('dark');
+      }
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Typing Effect
+      const typingText = document.getElementById('typing-text');
+      const roles = ["Web Developer", "Frontend Developer", "React Enthusiast", "Problem Solver"];
+      let i = 0, j = 0, current = "", isDeleting = false;
+
+      function type() {
+        if (i < roles.length) {
+          if (!isDeleting && j <= roles[i].length) {
+            current = roles[i].substring(0, j++);
+            typingText.innerText = current;
+          } else if (isDeleting && j >= 0) {
+            current = roles[i].substring(0, j--);
+            typingText.innerText = current;
+          }
+
+          if (j === roles[i].length + 1) {
+            isDeleting = true;
+            setTimeout(type, 1000);
+            return;
+          } else if (j < 0) {
+            isDeleting = false;
+            i = (i + 1) % roles.length;
+          }
+          setTimeout(type, isDeleting ? 60 : 120);
+        }
+      }
+      type();
+    </script>
+  </body>
+</html>
