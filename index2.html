@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sachin Kolhe</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: '#432E54',
+              primary: '#4B4376',
+              secondary: '#AE445A',
+              accent: '#E8BCB9',
+              text: '#000',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-text transition-all duration-300">
+
+    <!-- 🔄 Theme Toggle -->
+    <div class="p-4 text-right">
+      <button onclick="toggleDarkMode()" class="bg-secondary px-4 py-2 rounded shadow hover:bg-primary text-white">
+        Toggle Theme
+      </button>
+    </div>
+
+    <!-- 🔝 Header -->
+    <header class="bg-primary text-white py-4 shadow">
+      <nav class="container mx-auto flex justify-between items-center px-4">
+        <h1 class="text-xl font-bold">Sachin Kolhe</h1>
+        <ul class="flex space-x-4">
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#skills" class="hover:underline">Skills</a></li>
+          <li><a href="#projects" class="hover:underline">Projects</a></li>
+          <li><a href="#experience" class="hover:underline">Experience</a></li>
+          <li><a href="#contacts" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 👤 About Me -->
+    <section id="about" class="p-8" data-aos="fade-up">
+      <h2 class="text-2xl font-bold mb-2">About Me</h2>
+      <p id="typed" class="text-lg font-medium text-white"></p>
+    </section>
+
+     <!-- 🧳 Experience -->
+    <section id="experience" class="p-8 bg-accent" data-aos="zoom-in">
+      <h2 class="text-2xl font-bold mb-4">Experience</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-semibold text-lg text-primary">MERN Stack Developer @ Wargstech</h3>
+          <p class="text-sm">Nov 2024 - Jan 2025 | Pune, Maharashtra</p>
+          <ul class="list-disc ml-6">
+            <li>Enhanced MERN apps, used Next.js for SSR and Razorpay integration.</li>
+            <li>Mentored junior devs and improved system performance.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg text-primary">Software Developer @ Siddhatech</h3>
+          <p class="text-sm">Feb 2024 - Apr 2024</p>
+          <ul class="list-disc ml-6">
+            <li>Built bank sales module using SwiftUI + UIKit.</li>
+            <li>Integrated APIs, RSA auth, and optimized MVVM architecture.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg text-primary">SDE Intern @ 40 Bears Tech Corp</h3>
+          <p class="text-sm">Jan 2022 - Jun 2022</p>
+          <ul class="list-disc ml-6">
+            <li>Created responsive React pages, collaborated on debugging and testing.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 💼 Projects -->
+    <section id="projects" class="p-8" data-aos="fade-left">
+      <h2 class="text-2xl font-bold mb-4">Projects</h2>
+      <div class="bg-white p-4 rounded shadow border border-primary">
+        <h3 class="text-xl font-semibold text-primary">Venue Booking App | MERN Stack</h3>
+        <p>
+          Designed a full-stack venue booking application with Android frontend,
+          React.js, Node.js/Express.js backend, and MySQL for real-time bookings.
+        </p>
+        <a href="#" class="text-secondary hover:underline font-medium">View Project</a>
+      </div>
+    </section>
+
+   
+    <!-- 🧠 Skills -->
+    <section id="skills" class="p-8 bg-accent" data-aos="fade-right">
+      <h2 class="text-2xl font-bold mb-4">Skills</h2>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>HTML, CSS, JavaScript</li>
+        <li>React.js, Node.js, Express.js, Next.js</li>
+        <li>Swift, SwiftUI, UIKit</li>
+        <li>MySQL, Git, Linux, Postman</li>
+        <li>AWS EC2, RDS</li>
+      </ul>
+    </section>
+    <!-- ✉️ Contact -->
+    <section id="contacts" class="p-8" data-aos="fade-up">
+      <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+      <form action="https://formsubmit.co/sachin.kolhe.job@gmail.com" method="POST" class="space-y-4">
+        <input type="text" name="name" placeholder="Your name" class="w-full p-2 rounded border border-primary" required />
+        <input type="email" name="email" placeholder="Your email" class="w-full p-2 rounded border border-primary" required />
+        <textarea name="message" placeholder="Your message" class="w-full p-2 rounded border border-primary" required></textarea>
+        <button type="submit" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary">Submit</button>
+      </form>
+    </section>
+
+    <!-- 📜 Footer -->
+    <footer class="text-center p-4 bg-primary text-white mt-6">
+      © 2025 Sachin Kolhe
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      function toggleDarkMode() {
+        document.body.classList.toggle('dark');
+      }
+
+      new Typed('#typed', {
+        strings: ["Hello! I'm a passionate Web Developer.", "I build responsive apps using modern tech.", "Welcome to my portfolio!"],
+        typeSpeed: 60,
+        backSpeed: 40,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
